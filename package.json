@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "express": "^4.19.1",
+    "mongoose": "^8.2.3",
+    "prop-types": "^15.8.1",
+    "react-markdown": "^9.0.1",
+    "whatwg-fetch": "^3.6.20"
+  },
+  "devDependencies": {
+    "@types/whatwg-fetch": "^0.0.33"
+  }
+}
