@@ -6,6 +6,7 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const Ingredient = require("./model/ingredient");
 const Stock = require("./model/stock");
+const Recette = require("./model/recette");
 
 // and create our instances
 const app = express();
@@ -33,6 +34,17 @@ router.get('/stocks', (req, res) => {
   Stock.find()
     .then(stock => {
       res.json({ success: true, data: stock });
+    })
+    .catch(err => {
+      res.json({ success: false, data: { error: err } });
+    });
+});
+
+// route requete des recettes
+router.get('/recettes', (req, res) => {
+  Recette.find()
+    .then(recette => {
+      res.json({ success: true, data: recette });
     })
     .catch(err => {
       res.json({ success: false, data: { error: err } });
