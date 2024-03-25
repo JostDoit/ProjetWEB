@@ -16,7 +16,7 @@ const API_PORT = process.env.API_PORT || 3001;
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-// now we can set the route path & initialize the API
+// route requete de tous les ingrédients
 router.get('/ingredients', (req, res) => {
   Ingredient.find()
     .then(ingredient => {
