@@ -51,6 +51,19 @@ router.get('/recettes', (req, res) => {
     });
 });
 
+// route pour récupérer les recettes contenant un certain ingrédient
+router.get('/recettes/contenant/:ingredient', (req, res) => {
+  const ingredientRecherche = req.params.ingredient;
+
+  Recette.find({ ingredients: ingredientRecherche })
+    .then(recettes => {
+      res.json({ success: true, data: recettes });
+    })
+    .catch(err => {
+      res.json({ success: false, data: { error: err } });
+    });
+});
+
 // Use our router configuration when we call /api
 app.use('/api', router);
 
