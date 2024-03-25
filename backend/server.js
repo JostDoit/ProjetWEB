@@ -5,6 +5,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const Ingredient = require("./model/ingredient");
+const Stock = require("./model/stock");
 
 // and create our instances
 const app = express();
@@ -21,6 +22,17 @@ router.get('/ingredients', (req, res) => {
   Ingredient.find()
     .then(ingredient => {
       res.json({ success: true, data: ingredient });
+    })
+    .catch(err => {
+      res.json({ success: false, data: { error: err } });
+    });
+});
+
+// route requete du stock
+router.get('/stocks', (req, res) => {
+  Stock.find()
+    .then(stock => {
+      res.json({ success: true, data: stock });
     })
     .catch(err => {
       res.json({ success: false, data: { error: err } });
