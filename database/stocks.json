@@ -1,17 +1,10 @@
 [
-      { "nom": "œufs" },
-      { "nom": "lait" },
-      { "nom": "beurre" },
+      { "nom": "poulet" },
       { "nom": "fromage" },
-      { "nom": "yaourt" },
-      { "nom": "jambon" },
-      { "nom": "pain" },
-      { "nom": "confiture" },
-      { "nom": "mayonnaise" },
-      { "nom": "ketchup" },
-      { "nom": "moutarde" },
-      { "nom": "cornichons" },
-      { "nom": "sauce soja" },
-      { "nom": "sauce tomate" },
-      { "nom": "carottes" }
+      { "nom": "beurre" },
+      { "nom": "sel" },
+      { "nom": "poivre noir" },
+      { "nom": "spaghetti" },
+      { "nom": "oignon" },
+      { "nom": "carotte" }
 ]

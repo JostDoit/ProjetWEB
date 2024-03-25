@@ -64,6 +64,35 @@ router.get('/recettes/contenant/:ingredient', (req, res) => {
     });
 });
 
+// Route pour récupérer la recette contenant le plus d'ingrédients du stock
+router.get('/recettes/max-ingredients-du-stock', (req, res) => {
+  // Récupérer tous les noms d'ingrédients du stock
+  Stock.find({}, 'nom')
+    .then(ingredientsDuStock => {
+      // Extraire les noms d'ingrédients sous forme de tableau
+      const nomsIngredientsDuStock = ingredientsDuStock.map(ingredient => ingredient.nom);
+
+      // Rechercher les recettes qui contiennent au moins un ingrédient du stock
+      Recette.find({ ingredients: { $in: nomsIngredientsDuStock } })
+        .then(recettes => {
+          // Trier les recettes par nombre d'ingrédients correspondants, en ordre décroissant
+          recettes.sort((a, b) => {
+            return b.ingredients.filter(ingredient => nomsIngredientsDuStock.includes(ingredient)).length -
+                   a.ingredients.filter(ingredient => nomsIngredientsDuStock.includes(ingredient)).length;
+          });
+
+          // Renvoyer la première recette (celle avec le plus grand nombre d'ingrédients du stock)
+          res.json({ success: true, data: recettes[0] });
+        })
+        .catch(err => {
+          res.json({ success: false, data: { error: err } });
+        });
+    })
+    .catch(err => {
+      res.json({ success: false, data: { error: err } });
+    });
+});
+
 // Use our router configuration when we call /api
 app.use('/api', router);
 
