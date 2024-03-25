@@ -1,0 +1,64 @@
+[
+      {
+        "nom": "Omelette au fromage",
+        "ingredients": [
+          "Œufs",
+          "Fromage",
+          "Beurre",
+          "Sel",
+          "Poivre noir"
+        ]
+      },
+      {
+        "nom": "Salade César",
+        "ingredients": [
+          "Laitue romaine",
+          "Poulet",
+          "Croûtons",
+          "Parmesan",
+          "Sauce César"
+        ]
+      },
+      {
+        "nom": "Spaghetti bolognaise",
+        "ingredients": [
+          "Spaghetti",
+          "Bœuf haché",
+          "Tomates",
+          "Oignon",
+          "Ail",
+          "Carotte",
+          "Céleri",
+          "Huile d'olive",
+          "Sel",
+          "Poivre noir",
+          "Parmesan (optionnel)"
+        ]
+      },
+      {
+        "nom": "Poulet rôti aux herbes",
+        "ingredients": [
+          "Poulet entier",
+          "Citron",
+          "Ail",
+          "Thym",
+          "Romarin",
+          "Huile d'olive",
+          "Sel",
+          "Poivre noir"
+        ]
+      },
+      {
+        "nom": "Pain perdu",
+        "ingredients": [
+          "Pain tranché",
+          "Œufs",
+          "Lait",
+          "Sucre",
+          "Cannelle",
+          "Beurre",
+          "Sirop d'érable (optionnel)"
+        ]
+      }
+]
+  
