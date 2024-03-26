@@ -5,6 +5,8 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const Ingredient = require("./model/ingredient");
+const Stock = require("./model/stock");
+const Recette = require("./model/recette");
 
 // and create our instances
 const app = express();
@@ -16,11 +18,75 @@ const API_PORT = process.env.API_PORT || 3001;
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-// now we can set the route path & initialize the API
+// route requete de tous les ingrédients
 router.get('/ingredients', (req, res) => {
   Ingredient.find()
     .then(ingredient => {
       res.json({ success: true, data: ingredient });
+    })
+    .catch(err => {
+      res.json({ success: false, data: { error: err } });
+    });
+});
+
+// route requete du stock
+router.get('/stocks', (req, res) => {
+  Stock.find()
+    .then(stock => {
+      res.json({ success: true, data: stock });
+    })
+    .catch(err => {
+      res.json({ success: false, data: { error: err } });
+    });
+});
+
+// route requete des recettes
+router.get('/recettes', (req, res) => {
+  Recette.find()
+    .then(recette => {
+      res.json({ success: true, data: recette });
+    })
+    .catch(err => {
+      res.json({ success: false, data: { error: err } });
+    });
+});
+
+// route pour récupérer les recettes contenant un certain ingrédient
+router.get('/recettes/contenant/:ingredient', (req, res) => {
+  const ingredientRecherche = req.params.ingredient;
+
+  Recette.find({ ingredients: ingredientRecherche })
+    .then(recettes => {
+      res.json({ success: true, data: recettes });
+    })
+    .catch(err => {
+      res.json({ success: false, data: { error: err } });
+    });
+});
+
+// Route pour récupérer la recette contenant le plus d'ingrédients du stock
+router.get('/recettes/max-ingredients-du-stock', (req, res) => {
+  // Récupérer tous les noms d'ingrédients du stock
+  Stock.find({}, 'nom')
+    .then(ingredientsDuStock => {
+      // Extraire les noms d'ingrédients sous forme de tableau
+      const nomsIngredientsDuStock = ingredientsDuStock.map(ingredient => ingredient.nom);
+
+      // Rechercher les recettes qui contiennent au moins un ingrédient du stock
+      Recette.find({ ingredients: { $in: nomsIngredientsDuStock } })
+        .then(recettes => {
+          // Trier les recettes par nombre d'ingrédients correspondants, en ordre décroissant
+          recettes.sort((a, b) => {
+            return b.ingredients.filter(ingredient => nomsIngredientsDuStock.includes(ingredient)).length -
+                   a.ingredients.filter(ingredient => nomsIngredientsDuStock.includes(ingredient)).length;
+          });
+
+          // Renvoyer la première recette (celle avec le plus grand nombre d'ingrédients du stock)
+          res.json({ success: true, data: recettes[0] });
+        })
+        .catch(err => {
+          res.json({ success: false, data: { error: err } });
+        });
     })
     .catch(err => {
       res.json({ success: false, data: { error: err } });
