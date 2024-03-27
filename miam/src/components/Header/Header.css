@@ -1,0 +1,67 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 20px 10px 20px;
+    background-color: #ffffff;
+    color: #fff;
+}
+
+.logo-container {
+    flex: 1; /* Pour que le conteneur du logo s'étende pour remplir l'espace disponible */
+    text-align: center; /* Centrer horizontalement le contenu à l'intérieur du conteneur */
+    margin-top: -55px; /* Pour déplacer le logo vers le haut */
+}
+
+.logo {
+    height: 160px;
+    width: auto;
+    display: inline-block; /* Pour que l'image soit affichée en tant que bloc en ligne */
+}
+
+.dropdown-container {
+    position: absolute; /* Position relative pour positionner le menu déroulant */
+    right : 30px; /* Aligner le menu déroulant à droite */
+    top : 50px; /* Aligner le menu déroulant en haut */
+}
+
+.dropdown-button {
+    background-color: transparent;
+    border: none;
+    color: #870909;
+    cursor: pointer;
+    padding: 0;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #000000;
+    margin-bottom: 6px; /* Espace entre les barres */
+}
+
+.dropdown-content {
+    display: none; /* Par défaut, le menu est caché */
+    position: absolute;
+    top: 100%; /* Place le menu juste en dessous du bouton */
+    right: 0; /* Aligne le menu à droite */
+    background-color: #333;
+    min-width: 120px;
+    z-index: 1; /* Assure que le menu s'affiche au-dessus du contenu */
+}
+
+.dropdown-content a {
+    color: #000000;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content.show {
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #444;
+}
