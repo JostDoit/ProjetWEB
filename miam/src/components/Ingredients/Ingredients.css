@@ -1,0 +1,43 @@
+.ingredients-manager {
+    font-family: Arial, sans-serif;
+}
+
+.input-container {
+    margin-bottom: 20px;
+}
+
+.input-container input {
+    width: 200px;
+    padding: 5px;
+    margin-right: 10px;
+}
+
+.input-container button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    position: relative; /* Définir la position relative pour les éléments de la liste */
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+ul li button {
+    position: absolute; /* Positionner la croix de manière absolue */
+    right: 250px; /* La croix sera alignée à droite à l'intérieur de l'élément de liste */
+    margin-right: 5px; /* Ajouter un espace entre l'ingrédient et la croix */
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
