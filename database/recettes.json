@@ -1,0 +1,63 @@
+[
+  {
+    "nom": "omelette au fromage",
+    "ingredients": [
+      "oeufs",
+      "fromage",
+      "beurre",
+      "sel",
+      "poivre noir"
+    ]
+  },
+  {
+    "nom": "salade cesar",
+    "ingredients": [
+      "laitue romaine",
+      "poulet",
+      "croutons",
+      "parmesan",
+      "sauce cesar"
+    ]
+  },
+  {
+    "nom": "spaghetti bolognaise",
+    "ingredients": [
+      "spaghetti",
+      "boeuf hache",
+      "tomates",
+      "oignon",
+      "ail",
+      "carotte",
+      "celeri",
+      "huile d'olive",
+      "sel",
+      "poivre noir",
+      "parmesan"
+    ]
+  },
+  {
+    "nom": "poulet roti aux herbes",
+    "ingredients": [
+      "poulet entier",
+      "citron",
+      "ail",
+      "thym",
+      "romarin",
+      "huile d'olive",
+      "sel",
+      "poivre noir"
+    ]
+  },
+  {
+    "nom": "pain perdu",
+    "ingredients": [
+      "pain tranche",
+      "oeufs",
+      "lait",
+      "sucre",
+      "cannelle",
+      "beurre",
+      "sirop d'erable"
+    ]
+  }
+]
