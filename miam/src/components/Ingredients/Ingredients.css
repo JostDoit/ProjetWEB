@@ -30,11 +30,15 @@ ul li {
     display: flex;
     align-items: center;
     margin-bottom: 5px;
+    border: 1px solid #000; /* Ajouter une bordure autour de chaque élément */
+    border-radius: 5px; /* Rendre les bords arrondis */
+    padding: 5px 10px ; /* Ajouter un espace interne */
+    width: 200px; /* Définir une largeur pour les éléments de la liste */
 }
 
 ul li button {
     position: absolute; /* Positionner la croix de manière absolue */
-    right: 250px; /* La croix sera alignée à droite à l'intérieur de l'élément de liste */
+    right: 3px; /* La croix sera alignée à droite à l'intérieur de l'élément de liste */
     margin-right: 5px; /* Ajouter un espace entre l'ingrédient et la croix */
     background-color: #dc3545;
     color: #fff;

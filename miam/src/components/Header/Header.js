@@ -19,9 +19,6 @@ const Header = () => {
                     <span className="bar"></span>
                 </button>
                 <div className={`dropdown-content ${menuOpen ? 'show' : ''}`}>
-                    <a href="#">Option 1</a>
-                    <a href="#">Option 2</a>
-                    <a href="#">Option 3</a>
                 </div>
             </div>
         </header>
