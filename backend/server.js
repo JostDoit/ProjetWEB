@@ -66,7 +66,7 @@ router.get('/recettes/contenant/:ingredient', (req, res) => {
 
 // Route pour récupérer la recette contenant le plus d'ingrédients du stock
 router.get('/recettes/max-ingredients-du-stock', (req, res) => {
-  // Récupérer tous les noms d'ingrédients du stock
+  // récupérer tous les noms d'ingrédients du stock
   Stock.find({}, 'nom')
     .then(ingredientsDuStock => {
       // Extraire les noms d'ingrédients sous forme de tableau
