@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Home = () => {
     const handleOpenCamera = () => {
         // Demander l'autorisation pour accéder à la caméra
@@ -14,12 +12,12 @@ const Home = () => {
             });
     };
 
-    return (
-        <div className="home">
-            <button onClick={handleOpenCamera}>What can I cook ?</button>
-            {/* Autres éléments de la page d'accueil */}
-        </div>
-    );
+    // return (
+    //     <div className="home">
+    //         <button onClick={handleOpenCamera}>What can I cook ?</button>
+    //         {/* Autres éléments de la page d'accueil */}
+    //     </div>
+    // );
 }
 
 export default Home;

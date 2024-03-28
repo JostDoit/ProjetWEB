@@ -1,0 +1,67 @@
+.search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px; /* Espace entre le bouton et la barre de recherche */
+}
+
+.search-bar input {
+    width: 325px;
+    height: 60px;
+    border: 2px solid #000;
+    border-radius: 20px;
+    padding: 0 10px;
+    font-size: 16px;
+}
+
+.ingredient-container {
+    position: relative; /* Positionnement relatif pour les éléments enfants absolus */
+}
+
+.ingredient-icon {
+    width: 30px;
+    height: auto;
+    position: absolute; /* Positionnement absolu pour placer l'icône à l'intérieur du rectangle */
+    right: 35px;
+    top: 50%; /* Centrer verticalement */
+    transform: translateY(-50%);
+}
+
+.ingredients-manager {
+    font-family: Arial, sans-serif;
+}
+
+.mes-ingredients {
+    position: relative;
+    left: 20px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    position: relative; /* Définir la position relative pour les éléments de la liste */
+    left: 20px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    border: 2px solid #000; /* Ajouter une bordure autour de chaque élément */
+    border-radius: 15px; /* Rendre les bords arrondis */
+    padding: 5px 10px ; /* Ajouter un espace interne */
+    width: 200px; /* Définir une largeur pour les éléments de la liste */
+}
+
+ul li button {
+    position: absolute; /* Positionner la croix de manière absolue */
+    right: 3px; /* La croix sera alignée à droite à l'intérieur de l'élément de liste */
+    margin-right: 5px; /* Ajouter un espace entre l'ingrédient et la croix */
+    background-color: #dc3545;
+    border-radius: 5px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}

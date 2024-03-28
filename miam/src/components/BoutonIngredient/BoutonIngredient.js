@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
-import './Ingredients.css'; // Importation des styles CSS spécifiques au composant IngredientsManager
+import React, {useState} from 'react';
+import './BoutonIngredient.css'; // Importation des styles CSS spécifiques au composant Header
 
-const IngredientsManager = () => {
+const BoutonIngredient = () => {
+
     const [inputValue, setInputValue] = useState(''); // État pour stocker la valeur de l'entrée de recherche
     const [ingredients, setIngredients] = useState([]); // État pour stocker la liste des ingrédients
 
@@ -27,19 +28,26 @@ const IngredientsManager = () => {
         }
     };
 
-    return (
-        <div className="ingredients-manager">
-            <div className="input-container">
-                <input
-                    type="text"
-                    value={inputValue}
+    return(
+        <div className = "ingredients-mangager">
+            <div className="search-bar">
+                <input 
+                    type="text" 
+                    value = {inputValue}
                     onChange={(e) => setInputValue(e.target.value)}
                     onKeyDown={handleKeyDown} // Gérer l'appui sur la touche "Entrée"
-                    placeholder="Ajouter un ingrédient..."
+                    placeholder="Ajouter un ingrédient" 
                 />
-                <button onClick={handleAddIngredient}>Ajouter</button>
+                <div className="ingredient-container">
+                    <img src="icone-ingredient.png" alt="Ingrédient" className="ingredient-icon" />
+                </div>
             </div>
             <ul>
+                {ingredients.length > 0 && ( // Vérifier si la liste des ingrédients n'est pas vide 
+                    <div className="mes-ingredients">
+                        Mes ingrédients :
+                    </div>
+                )}
                 {ingredients.map((ingredient, index) => (
                     <li key={index}>
                         {ingredient}
@@ -48,8 +56,7 @@ const IngredientsManager = () => {
                 ))}
             </ul>
         </div>
-    );
+    )
 }
 
-export default IngredientsManager;
-
+export default BoutonIngredient
